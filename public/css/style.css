@@ -1,0 +1,25 @@
+body {
+    background: #ebedf2;
+}
+
+.bg-white {
+    background-color: #ffffff12 !important;
+}
+
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(33, 204, 108, 0.94);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-login {
+    border-radius: 36px;
+    background: linear-gradient(145deg, #ebedf2, #e7eaf2);
+    box-shadow: 17px 17px 39px #b2b6b7, -17px -17px 39px #ffffff;
+    height: 28em;
+    width: 43em;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 12% 8% 8% 6%;
+}
