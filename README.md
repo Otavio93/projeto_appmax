@@ -1,10 +1,19 @@
 ######################
 
-php artisan migrate:refresh --seed 
+- Comandos de inicialização:
+
+composer install
+
+php artisan migrate:refresh
 
 php artisan jwt:secret
 
 npm install
+
+php artisan key:generate
+
+php artisan db:seed
+
 
 
 jwt-auth by Sean Tymon

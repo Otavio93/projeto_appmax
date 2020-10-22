@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Appmax</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -72,10 +72,111 @@
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
             @yield('content')
         </main>
+
+        <div class="modal fade" ref="modal" id="vueModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Editar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" ref="modal" id="vueModalCreate" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel">Cadastrar produto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" action="{{ route('create-sku') }}">
+                            @csrf
+                            <div class="form-group">
+                                <label for="name_product">Nome</label>
+                                <input type="text" name="name" class="form-control" id="name_product">
+                            </div>
+                            <div class="form-group">
+                                <label for="sku">SKU</label>
+                                <input type="text" class="form-control" name="sku" id="sku">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" ref="modal" id="vueModalProduct" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel">Adicionar produto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" action="{{ route('create-product') }}">
+                            @csrf
+                            <div class="form-group">
+                                <label for="sku">SKU</label>
+                                <select id="select-sku" class="form-control" name="id_product" id="sku">
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Nome</label>
+                                <input type="text" class="form-control" name="name" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="feature">Características</label>
+                                <input type="text" class="form-control" name="feature" id="feature">
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Preço</label>
+                                <input type="text" class="form-control" name="price" id="price">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
+<script>
+
+    
+    // fetch = fetch('/products')
+    //     .then(function(response) {
+    //         return response.json();
+    //     }).then(function(json) {
+    
+    //         const select = document.getElementById("select-sku");
+    //         json.forEach(element => {
+    //             var option = document.createElement("option");
+    //             option.text = `${element.sku} / ${element.name}`;
+    //             option.value =  element.id;
+    //             select.add(option); 
+    //         });
+    // });
+
+</script>
 </html>

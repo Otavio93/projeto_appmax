@@ -13,13 +13,27 @@ body {
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
+.card-table {
+    border-radius: 36px;
+    background: linear-gradient(145deg, #ebedf2, #e7eaf2);
+    box-shadow: 17px 17px 39px #b2b6b7, -17px -17px 39px #ffffff;
+    height: 31em;
+    width: 43em;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 5% 8% 8% 6%;
+}
 .card-login {
     border-radius: 36px;
     background: linear-gradient(145deg, #ebedf2, #e7eaf2);
     box-shadow: 17px 17px 39px #b2b6b7, -17px -17px 39px #ffffff;
-    height: 28em;
+    height: 31em;
     width: 43em;
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 12% 8% 8% 6%;
+    padding: 15% 8% 8% 6%;
+}
+
+.card-body {
+    padding: 0;
 }

@@ -29,4 +29,42 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    data: {
+        teste: "teste",
+        produtos: {
+            sku: '1234',
+            nome: 'camisa',
+            preco: 'R$10'
+        }
+    },
+    methods: {
+        showModal: function  (event) {
+            $('#vueModal').modal('show')
+        },
+        showModalSKU: function  (event) {
+            $('#vueModalCreate').modal('show')
+        },
+        showModalProduct: function  (event) {
+            fetch('/products')
+            .then(function(response) {
+                return response.json();
+            }).then(function(json) {
+        
+                const select = document.getElementById("select-sku");
+                var length = select.options.length;
+                for (i = length-1; i >= 0; i--) {
+                  select.options[i] = null;
+                }
+                json.forEach(element => {
+                    var option = document.createElement("option");
+                    option.text = `${element.sku} / ${element.name}`;
+                    option.value =  element.id;
+                    select.add(option); 
+                });
+        });
+
+            $('#vueModalProduct').modal('show')
+        },
+
+    }
 });

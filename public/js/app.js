@@ -49749,7 +49749,43 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  data: {
+    teste: "teste",
+    produtos: {
+      sku: '1234',
+      nome: 'camisa',
+      preco: 'R$10'
+    }
+  },
+  methods: {
+    showModal: function showModal(event) {
+      $('#vueModal').modal('show');
+    },
+    showModalSKU: function showModalSKU(event) {
+      $('#vueModalCreate').modal('show');
+    },
+    showModalProduct: function showModalProduct(event) {
+      fetch('/products').then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        var select = document.getElementById("select-sku");
+        var length = select.options.length;
+
+        for (i = length - 1; i >= 0; i--) {
+          select.options[i] = null;
+        }
+
+        json.forEach(function (element) {
+          var option = document.createElement("option");
+          option.text = "".concat(element.sku, " / ").concat(element.name);
+          option.value = element.id;
+          select.add(option);
+        });
+      });
+      $('#vueModalProduct').modal('show');
+    }
+  }
 });
 
 /***/ }),
@@ -49886,8 +49922,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/otavio/Área de Trabalho/Projetos de estudo/UpInside/api_jwt/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/otavio/Área de Trabalho/Projetos de estudo/UpInside/api_jwt/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/otavio/Documents/projects/projeto_appmax/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/otavio/Documents/projects/projeto_appmax/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

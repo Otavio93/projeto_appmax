@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div>
                 <div class="card-login">
-                    <form method="POST" action="/api/auth/login">
+                    <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
