@@ -1,4 +1,9 @@
 ######################
+# Laravel Framework 8.10.0
+# PHP 7.4.11 
+# mysql  Ver 8.0.21
+######################
+
 
 - Comandos de inicialização:
 
